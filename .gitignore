@@ -1,0 +1,25 @@
+venv
+__pycache__/
+mecab-ipadic-neologd/
+# Environments
+.vscode
+.env
+.venv
+.vscode/
+.DS_Store
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.idea
+*.pyc
+*.pkl
+__pycache__
+.DS_Store
+*.pkl
+*.svm
+**/*.model
+**/*.gensim
+**/*.state
+**/*.npy

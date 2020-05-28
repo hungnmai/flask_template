@@ -1,0 +1,8 @@
+system:
+  port: 8888
+  host: localhost
+  debug: True
+database:
+  host: localhost
+  port: 20217
+  db_name: name_db_mongo

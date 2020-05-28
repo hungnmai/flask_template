@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Latest compiled JavaScript -->
+
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css"/>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/index.css') }}">
+
+
+<div class="text-center center">
+</div>
+<div class="content">
+
+    <h3>Hello, This is Flask</h3>
+</div>
+<script type="text/javascript" src="{{ url_for('static', filename='js/d3.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/d3.layout.cloud.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+{% endblock %}
