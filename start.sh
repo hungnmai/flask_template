@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-uwsgi --socket 0.0.0.0:8080 --protocol=http -w wsgi:app --threads=1 --processes=16
+gunicorn api.routers:app -w 2 --preload --reload -t 30 --bind 127.0.0.1:8080
