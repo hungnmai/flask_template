@@ -1,28 +1,26 @@
-## Template cho Flask
-**Project bao gồm các module:**
-* ai: Phần xử lý logic
-* api: cung cấp api, router
-* database: DB đang sử dụng là mongoDB
+## Template for Flask
+**Project includes modules:**
+* ai, api, database
 
-### Cài đặt các thư viện
+### Install requirements
 
-**Tạo môi trường bằng conda**
+**Create env by conda**
 ```bash
-conda create -n name_env python=3.6
+conda create -n name_env python=3.8
 ``` 
-**Sau khi tạo môi trường thực hiện activate:**
+**activate env:**
 
 ```bash
 conda activate name_env
 ```
 
-**cd vào project và cài đặt thư viện bằng lệnh:**
+**Install libs in file requirements:**
 ```bash
 pip install -r requiments.txt
 ```
 
-### Chạy template:
+### Run service:
 ```bash
-python start.py
+sh start.sh
 ```
-*Note: có thể thay host và port trong file config.yaml*
+*Note: change config (host, port, worker, timeout ...) in **start.sh***
