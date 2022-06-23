@@ -1,11 +1,5 @@
-import os, sys
-
-dir_path = os.path.dirname(os.path.realpath(__file__))
-dir_path = '/'.join(dir_path.split('/')[:-1])
-sys.path.append(dir_path)
 from flask_cors import CORS
 from flask_bootstrap import Bootstrap
-from database.connection import MongoDB
 from flask import render_template, request, Flask, jsonify
 
 app = Flask(__name__)
@@ -13,7 +7,6 @@ Bootstrap(app)
 cors = CORS(app, resources={r'/*': {"origins": '*'}})
 app.config['CORS_HEADER'] = 'Content-Type'
 
-mongo = MongoDB()
 app.config["JSON_SORT_KEYS"] = False
 
 
@@ -35,14 +28,32 @@ def index():
                            title='Flask template')
 
 
-@app.route('/endpoint', methods=['POST', 'GET'])
-def endpoint():
-    try:
-        if request.method == 'POST':
-            q = request.form['q']
-        else:
-            q = request.args.get('q')
+@app.route("/search", methods=['GET'])
+def search():
+    print("searching...")
+    if request.method == 'GET':
+        q = request.args.get("q", None)
+        return jsonify({
+            "status": "success",
+            "query": q,
+            "result": "Hello world!"
+        })
 
-        return jsonify({"q": q, "status": "success"})
-    except Exception as e:
-        return jsonify({"status": "fail", "cause": str(e)})
+
+@app.route("/calculate", methods=["POST"])
+def calculate():
+    print("calculate...")
+    print(request.method)
+    if request.method == "POST":
+        a = request.json['a']
+        b = request.json['b']
+        return jsonify({
+            "status": "success",
+            "a": a,
+            "b": b,
+            "sum": a + b
+        })
+    else:
+        return jsonify({
+            "status": "fail"
+        })

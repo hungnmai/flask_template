@@ -1,7 +1,7 @@
 import os
 import yaml
 
-from utils.get_path import ROOT_PATH
+from utils.path import ROOT_PATH
 
 config_file = os.path.join(ROOT_PATH, "config.yaml")
 with open(config_file, "r") as file:
