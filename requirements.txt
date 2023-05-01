@@ -1,4 +1,4 @@
-flask==2.1.2
+flask==2.3.2
 flask_cors== 3.0.10
 flask_bootstrap==3.3.7.1
 pyyaml==6.0
